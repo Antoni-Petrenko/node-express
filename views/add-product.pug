@@ -1,0 +1,14 @@
+extends layouts/main-layout.pug
+block content
+  form.col-6(action='/admin/post-message' method='POST')
+    .form-group
+      .row
+        .col
+          input.form-control(type='text' placeholder='Имя' name='name')
+        .col
+          input.form-control(type='text' placeholder='Фамилия' name='surname')
+      small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+    .form-group
+      label(for='exampleInputPassword1') Email
+      input#exampleInputPassword1.form-control(type='email' name='eMail')
+    button.btn.btn-primary(type='submit') Submit

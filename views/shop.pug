@@ -1,0 +1,22 @@
+
+extends layouts/main-layout.pug
+block content
+    if loged.length>0
+        table.table.table-striped.table-dark
+            thead
+                tr
+                th(scope='col') #
+                th(scope='col') &Icy;&mcy;&yacy;
+                th(scope='col') &Fcy;&acy;&mcy;&icy;&lcy;&icy;&yacy;
+                th(scope='col') E-mail
+                th(scope='col') Время
+            tbody
+                each user in loged 
+                    tr
+                    th(scope='row') #{user.num}
+                    td #{user.name}
+                    td #{user.surname}
+                    td #{user.eMail}
+                    td #{user.time}
+    else
+        h1 Нет залогиненных пользователей                
