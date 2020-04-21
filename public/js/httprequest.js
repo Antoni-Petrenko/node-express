@@ -8,10 +8,17 @@ form.addEventListener("submit", (e) => {
       return object;
     }, {})
   );
-  console.log(data)
-  fetch("localhost/admin/post-user",{
-      method:"POST"
-  });
+  fetch("/admin/post-user", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: data
+  }).then(response => response.json()).then(data => {
+    if (JSON.parse(data).status === "ok") {
+      form.querySelectorAll("input").forEach(el => {
+        el.value = "";
+      })
+    }
+  })
 });
-
-console.dir(form);
