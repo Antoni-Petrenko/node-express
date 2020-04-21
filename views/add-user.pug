@@ -1,6 +1,6 @@
 extends layouts/main-layout.pug
 block content
-  form.col-6(action='/admin/post-user' method='POST')
+  form.col-6#form 
     .form-group
       .row
         .col
@@ -12,3 +12,4 @@ block content
       label(for='exampleInputPassword1') Email
       input#exampleInputPassword1.form-control(type='email' name='eMail')
     button.btn.btn-primary(type='submit') Submit
+  script(src="/js/httprequest.js")  

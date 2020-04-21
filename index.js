@@ -3,12 +3,15 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 
+//Routers
 const adminRouters = require("./routes/admin");
 const shopRouters = require("./routes/shop");
 const notFoundRouter=require('./routes/404');
-console.log(notFoundRouter)
 
+//Utility
 const rootDir = require("./utility/path");
+
+
 
 const app = express();
 
@@ -24,4 +27,4 @@ app.use("/admin", adminRouters.router); //add admin router
 
 app.use(notFoundRouter);  //404 page
 
-app.listen("3300");
+app.listen("80");

@@ -1,7 +1,10 @@
-const products = [];
+const fs=require("fs");
+const path=require("path");
+const dirPath=require('../utility/path');
 
+const products=[];
 exports.getAddUser = (req, res, next) => {
-  res.render("add-user");
+  res.render("add-user");  
 };
 
 exports.postUsers = (req, res, next) => {
@@ -10,7 +13,6 @@ exports.postUsers = (req, res, next) => {
   req.body.num = products.length + 1;
   req.body.time = time;
   products.push(req.body);
-  res.redirect("/");
 };
 
 exports.getUsersList = (req, res, next) => {
