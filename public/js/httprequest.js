@@ -8,10 +8,11 @@ form.addEventListener("submit", (e) => {
       return object;
     }, {})
   );
-  console.log(data)
-  fetch("localhost/admin/post-user",{
-      method:"POST"
+  fetch("post-user",{
+      method:"POST",
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body:data
   });
 });
-
-console.dir(form);

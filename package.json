@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "start nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Antoni-Petrenko/node-express/issues"
   },
-  "homepage": "https://github.com/Antoni-Petrenko/node-express#readme"
+  "homepage": "https://github.com/Antoni-Petrenko/node-express#readme",
+  "engines": {
+    "node": "13.x"
+  }
 }

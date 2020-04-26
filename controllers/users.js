@@ -1,20 +1,18 @@
-const fs=require("fs");
-const path=require("path");
-const dirPath=require('../utility/path');
+const {User}=require('../models/user');
 
-const products=[];
 exports.getAddUser = (req, res, next) => {
   res.render("add-user");  
 };
 
 exports.postUsers = (req, res, next) => {
-  const date = new Date();
-  const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-  req.body.num = products.length + 1;
-  req.body.time = time;
-  products.push(req.body);
+  const user=new User(req.body);
+  user.save();
+  console.log(user)
 };
 
 exports.getUsersList = (req, res, next) => {
-  res.render("users-list", { loged: products, docTitle: "Loged Users" });
+ User.getUsers((users)=>{
+  res.render("users-list", { loged: users, docTitle: "Loged Users" });
+  })
+  
 };
