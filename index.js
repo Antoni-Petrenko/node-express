@@ -1,5 +1,4 @@
 const path = require("path");
-
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -14,7 +13,7 @@ const rootDir = require("./utility/path");
 
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 app.set("view engine", "pug"); //add view engine
 
 app.use(bodyParser.urlencoded({ extended: false })); // add parser to incoming http requests body
@@ -27,4 +26,4 @@ app.use("/admin", adminRouters.router); //add admin router
 
 app.use(notFoundRouter);  //404 page
 
-app.listen("80");
+app.listen(port);
