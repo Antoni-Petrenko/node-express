@@ -8,7 +8,7 @@ form.addEventListener("submit", (e) => {
       return object;
     }, {})
   );
-  fetch("/admin/post-user", {
+  fetch("/stat", {
     method: "POST",
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
