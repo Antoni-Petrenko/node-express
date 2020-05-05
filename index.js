@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const adminRouters = require("./routes/admin");
 const shopRouters = require("./routes/shop");
 const notFoundRouter=require('./routes/404');
+const stat=require("./routes/stat");
 
 //Utility
 const rootDir = require("./utility/path");
@@ -24,6 +25,8 @@ app.use(express.static(path.join(rootDir, "public"))); // share public folder
 app.use(shopRouters); //add shop router
 
 app.use("/admin", adminRouters.router); //add admin router
+
+app.use(stat)
 
 app.use(notFoundRouter);  //404 page
 
